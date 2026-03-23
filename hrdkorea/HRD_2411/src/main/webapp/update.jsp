@@ -10,10 +10,11 @@
 <link href ="style.css" rel ="stylesheet">
 </head>
 <body>
+<script type = "text/javascript" src = "check.js"></script>
 <jsp:include page="header.jsp"></jsp:include>
 <section>
 <H2>선수 정보 수정</H2>
-<form style = "display : flex; align-items : center; justify-content : center; text-align : center">
+<form method="post" action ="update_action.jsp" name = "frm" style = "display : flex; align-items : center; justify-content : center; text-align : center">
 <table border = 1>
 <%
 request.setCharacterEncoding("UTF-8");
@@ -41,7 +42,7 @@ try{
 
 <tr>
 <td>선수 번호</td>
-<td><input type ="text" name = "pid" value ="<%=pid%>"></td>
+<td><input type ="text" name = "pid" value ="<%=pid%>" readonly></td>
 </tr>
 <tr>
 <td>선수이름</td>
@@ -50,12 +51,12 @@ try{
 <tr>
 <td>선수포지션</td>
 <td>
-<select name ="ppostion" style ="width : 100%">
+<select name ="pposition" style ="width : 100%">
 <option value ="">포지션 선택</option>
-<option value ="투수">투수</option>
-<option value ="내야수">내야수</option>
-<option value ="외야수">외야수</option>
-<option value ="포수">포수</option>
+<option value ="투수"<%if(pposition.equals("투수")) out.println("selected"); %>>투수</option>
+<option value ="내야수"<%if(pposition.equals("내야수")) out.println("selected"); %>>내야수</option>
+<option value ="외야수"<%if(pposition.equals("외야수")) out.println("selected"); %>>외야수</option>
+<option value ="포수"<%if(pposition.equals("포수")) out.println("selected"); %>>포수</option>
 
 </select>
 </td>
@@ -66,15 +67,15 @@ try{
 </tr>
 <tr>
 <td>선수 등급</td>
-<td><input type ="radio" name = "pgrade" value ="S">S
-<input type ="radio" name = "pgrade" value ="A">A
-<input type ="radio" name = "pgrade" value ="B">B
-<input type ="radio" name = "pgrade" value ="C">C</td>
+<td><input type ="radio" name = "pgrade" value ="S" <%if(pgrade.equals("S")) out.println("checked"); %>>S
+<input type ="radio" name = "pgrade" value ="A" <%if(pgrade.equals("A")) out.println("checked"); %>>A
+<input type ="radio" name = "pgrade" value ="B" <%if(pgrade.equals("B")) out.println("checked"); %>>B
+<input type ="radio" name = "pgrade" value ="C" <%if(pgrade.equals("C")) out.println("checked"); %>>C</td>
 </tr>
 <tr>
 <td colspan = 2>
-<input type = "button" value ="수정">
-<input type = "button" value ="취소">
+<input type = "submit" value ="수정" onclick ="modify()">
+<input type = "reset" value ="취소" onclick = "cancel()">
 
 </td>
 </tr>

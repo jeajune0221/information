@@ -46,4 +46,19 @@ select * from giants_money;
 select * from giants_coach;
 select * from giants_player;
 
+select 코치번호,코치이름,코치포지션,관리선수,sum() as 관리선수연봉합계,avg() as 관리선수평균연봉, max() as 관리선수최대연봉,min() as 관리선수최소연봉   from giants_coach,giants_money desc;
+select cid,cname,cposition,count(pid),sum(pcost),avg(pcost),max(pcost),min(pcost) from giants_coach c natural giants_money m group by c.cid,cname,cposition order by sum(pcost) desc;
 
+SELECT 
+    c.cid, 
+    c.cname, 
+    c.cposition, 
+    COUNT(m.pid), 
+    SUM(m.pcost), 
+    AVG(m.pcost), 
+    MAX(m.pcost), 
+    MIN(m.pcost)
+FROM giants_coach c
+JOIN giants_money m ON c.cid = m.cid
+GROUP BY c.cid, c.cname, c.cposition
+ORDER BY SUM(m.pcost) DESC;
