@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+header{
+position : fixed;
+top : 0px;
+left : 0px;
+width : 100%;
+height : 70px;
+line-height : 70px;
+text-align : center;
+font-size : 40px;
+background : orange;
+}
+nav{
+position : fixed;
+top : 70px;
+left : 0px;
+width : 100%;
+height : 40px;
+background : pink;
+line-height : 40px;
+padding-left : 20px;
+font-size : 20px;
+}
+section{
+position : fixed;
+top : 110px;
+left : 0px;
+width : 100%;
+height : 100%;
+background : lightgray;
+text-align : center;
+}
+footer{
+position : fixed;
+bottom : 0px;
+left : 0px;
+width : 100%;
+height : 30px;
+background : orange;
+line-height : 30px;
+text-align : center;
+font-size : 30px;
+}
+</style>
+<body>
+<header>롯데자이언츠 직원 관리 프로그램</header>
+<nav>
+<a href="">선수조회</a>
+<a href="">선수등록</a>
+<a href="">코치별 관리선수 조회</a>
+<a href="">홈으로</a>
+</nav>
+<section>
+<H2>★2023 KBO 리그 우승팀=롯데자이언츠★</H2>
+</section>
+<jsp:include page="footer.jsp"></jsp:include>
+</body>
+</html>
