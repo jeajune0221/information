@@ -11,7 +11,8 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<form style =" display = flex; align-text:center;justify-content : center; align-items :center ;">
+<section>
+<form style =" display : flex; text-align: center; justify-content : center; align-items :center ;">
 	<table border = "1">
 		<tr>
 			<td>부서코드</td>
@@ -22,7 +23,7 @@
 		<%
 		request.setCharacterEncoding("UTF-8");
 		try{
-			String query = "select E.DEPT_CODE,E.DEPT_NAME,sum(R.DRV_END-R.DRV_START),sum(R.DRV_MONEY) from TBL_DEPT E JOIN TBL_DRIVE R on E.DEPT_CODE = R.DEPT_CODE group by E.DEPT_CODE,E.DEPT_NAME;;";
+			String query = "select E.DEPT_CODE,E.DEPT_NAME,sum(R.DRV_END-R.DRV_START),sum(R.DRV_MONEY) from TBL_DEPT E JOIN TBL_DRIVE R on E.DEPT_CODE = R.DEPT_CODE group by E.DEPT_CODE,E.DEPT_NAME";
 			PreparedStatement pstmt = con.prepareStatement(query);
 			ResultSet rs = pstmt.executeQuery(query);
 			
@@ -35,7 +36,7 @@
 					</td>
 					<td><%= rs.getString(2)%></td>
 					<td><%= rs.getInt(3)%></td>
-					<td>\<%=rs.getInt(4) %></td>
+					<td>=<%=rs.getInt(4) %></td>
 				
 				</tr>
 				<%
@@ -51,6 +52,7 @@
 	
 	</table>
 </form>
+</section>
 <jsp:include page="footer.jsp"></jsp:include>
 
 </body>

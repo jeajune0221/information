@@ -1,0 +1,42 @@
+function checkJoin() {
+    if(frm.drv_date.value.length==0) {
+        alert("주행일자가 입력되지 않았습니다!")
+        frm.drv_date.focus();
+        return false;
+    }
+
+    //모든 속성에 대해 유효성 검사
+    if(frm.car_no.value=="") {
+        alert("차량번호가 입력되지 않았습니다!")
+        frm.car_no.focus();
+        return false;
+    }
+
+    if(frm.drv_start.value=="") {
+        alert("출발Km 입력되지 않았습니다.")
+        frm.drv_start.focus();
+        return false;
+    }
+
+    if(frm.drv_end.value=="") {
+        alert("도착Km 입력되지 않았습니다.")
+        frm.drv_end.focus();
+        return false;
+    }
+    
+    if(frm.drv_money.value = ""){
+		alert("주유금액이 입력되지 않았습니다!")
+		frm.drv_money.focus();
+	}
+    
+    //if(frm.dept.value=="") {
+    if(frm.dept[1].checked == false && frm.dept[2].checked == false && frm.dept[3].checked == false && frm.dept[4].checked == false){
+		alert('부서코드가 선택되지 않았습니다! ')
+		frm.dept[0].focus()
+		return false;
+	}
+	
+}
+function rewrite(){
+	alert("정보를 지우고 처음부터 다시 입력 합니다.")
+}

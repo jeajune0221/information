@@ -11,6 +11,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<section>
 <form style =" display = flex; align-text:center;justify-content : center; align-items :center ;">
 	<table border = "1">
 		<tr>
@@ -60,6 +61,7 @@
 	
 	</table>
 </form>
+</section>
 <jsp:include page="footer.jsp"></jsp:include>
 
 </body>

@@ -23,15 +23,20 @@ function checkJoin() {
         frm.drv_end.focus();
         return false;
     }
-    if(frm.dept[0].checked == false && frm.dept[1].checked == false && frm.dept[2].checked == false && frm.pgrade[3].checked == false){
+    
+    if(frm.drv_money.value == ""){
+		alert("주유금액이 입력되지 않았습니다!")
+		frm.drv_money.focus();
+		return false;
+	}
+    
+    //if(frm.dept.value=="") {
+    if(frm.dept[1].checked == false && frm.dept[2].checked == false && frm.dept[3].checked == false && frm.dept[4].checked == false){
 		alert('부서코드가 선택되지 않았습니다! ')
 		frm.dept[0].focus()
 		return false;
 	}
-	if(frm.drv_money.value = ""){
-		alert("주유금액이 입력되지 않았습니다!")
-		frm.drv_money.focus();
-	}
+	
 }
 function rewrite(){
 	alert("정보를 지우고 처음부터 다시 입력 합니다.")

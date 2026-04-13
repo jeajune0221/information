@@ -1005,3 +1005,18 @@ Caused by: java.util.zip.ZipException: zip END header not found
 
 !ENTRY org.eclipse.wst.server.core 4 0 2026-04-13 12:16:17.191
 !MESSAGE Server Tomcat v9.0 Server at localhost failed to start.
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-04-13 17:41:21.234
+!MESSAGE [Info]	ESLint server running in node v16.14.2
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-04-13 17:49:06.344
+!MESSAGE [Info]	[lspserver] No content was available for completion request
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-04-13 17:49:06.467
+!MESSAGE [Info]	[lspserver] No content was available for completion request
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-04-13 17:51:58.043
+!MESSAGE [Info]	[lspserver] No content was available for completion request
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-04-13 17:51:58.136
+!MESSAGE [Info]	[lspserver] No content was available for completion request

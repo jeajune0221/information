@@ -31,20 +31,33 @@ try{
 
  %>
 
-
+<tr>
+	<td>
+	주행일자
+	</td>
+	<td><input type = "text" name = "drv_date" ></td>
+	<td>2023년01월01일 예)20230101</td>
+</tr>
+<tr>
+<td>차량번호</td>
+<td><input type = "text" name = "car_no" ></td>
+<td>예)10가0001</td>
+</tr>
 <tr>
 <td>출발km</td>
-<td><input type ="text" name = "pid" value ="<%= pid %>"  readonly></td>
+<td><input type ="text" name = "drv_start"></td>
+<td>km</td>
 </tr>
 <tr>
 <td>도착km</td>
-<td><input type ="text" name ="pname"></td>
+<td><input type ="text" name ="drv_end"></td>
+<td>km</td>
 </tr>
 <tr>
 <td>부서코드</td>
-<td>
-<select name ="pposition" style ="width : 100%">
-<option value ="">부서</option>
+<td colspan = 2>
+<select name ="dept" style ="width : 100%">
+<option value ="" selected>부서</option>
 <option value ="영업부">[10]영업부</option>
 <option value ="총무부">[20]총무부</option>
 <option value ="구매부">[30]구매부</option>
@@ -54,18 +67,13 @@ try{
 </td>
 </tr>
 <tr>
-<td>선수 등록일</td>
-<td><input type="text" name =""></td>
+<td>주유 금액</td>
+<td ><input type="text" name ="drv_money"></td>
+
+<td>원</td>
 </tr>
 <tr>
-<td>선수 등급</td>
-<td><input type ="radio" name = "pgrade" value ="S" >S
-<input type ="radio" name = "pgrade" value ="A" >A
-<input type ="radio" name = "pgrade" value ="B">B
-<input type ="radio" name = "pgrade" value ="C">C</td>
-</tr>
-<tr>
-<td colspan = 2>
+<td colspan = 3>
 <input type = "submit" value ="등록" onclick ="return checkJoin()">
 <input type = "reset" value ="다시쓰기" onclick = "rewrite()">
 
