@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@include file = "db_connect.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="style.css" rel = "stylesheet"/>
+</head>
+<body>
+<jsp:include page="header.jsp"></jsp:include>
+<form style =" display = flex; align-text:center;justify-content : center; align-items :center ;">
+	<table border = "1">
+		<tr>
+			<td>차량번호</td>
+			<td>모델</td>
+			<td>제조사</td>
+			<td>구매일</td>
+		</tr>
+		<%
+		request.setCharacterEncoding("UTF-8");
+		try{
+			String query = "select * from TBL_CAR";
+			PreparedStatement pstmt = con.prepareStatement(query);
+			ResultSet rs = pstmt.executeQuery(query);
+			
+			
+			while(rs.next()){
+				String day = rs.getString(4);
+				day = day.substring(0,4) + "년" + day.substring(4,6) + "월" + day.substring (6,8) + "일";
+				%>
+				<tr>
+					<td>
+					<%= rs.getString(1)%>
+					</td>
+					<td><%= rs.getString(2)%></td>
+					<td><%= rs.getString(3)%></td>
+					<td><%=day %></td>
+				
+				</tr>
+				<%
+			}
+			
+		}catch(Exception e){
+			
+		}
+		
+		
+		%>
+		
+	
+	</table>
+</form>
+<jsp:include page="footer.jsp"></jsp:include>
+
+</body>
+</html>

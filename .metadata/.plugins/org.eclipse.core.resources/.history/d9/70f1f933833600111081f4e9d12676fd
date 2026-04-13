@@ -1,0 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>국가직무능력(NCS National COmpetency Standards)으로 설계된 교육.훈련과정을 충실히 이수한 후,내부 외부 평가를 거쳐 일정 합격 기준을 충족하는 <br>교육.훈련생에게 국가기술자격을 부여하는 제도
+</h2>
+</body>
+</html>

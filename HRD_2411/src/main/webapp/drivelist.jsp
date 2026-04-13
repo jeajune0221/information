@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@include file = "db_connect.jsp" %>
+    <%@ page import="java.sql.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="style.css" rel = "stylesheet"/>
+</head>
+<body>
+<jsp:include page="header.jsp"></jsp:include>
+<form style =" display = flex; align-text:center;justify-content : center; align-items :center ;">
+	<table border = "1">
+		<tr>
+			<td>주행일자</td>
+			<td>차량번호</td>
+			<td>모델</td>
+			<td>출발km</td>
+			<td>도착km</td>
+			<td>부서명</td>
+			<td>주유금액</td>
+		</tr>
+		<%
+		request.setCharacterEncoding("UTF-8");
+		try{
+			String query = "select R.DRV_DATE, R.CAR_NO, C.CAR_MODEL,R.DRV_START,R.DRV_END,E.DEPT_NAME,R.DRV_MONEY from TBL_CAR C JOIN TBL_DRIVE R on C.CAR_NO = R.CAR_NO JOIN TBL_DEPT E on R.DEPT_CODE = E.DEPT_CODE";
+			PreparedStatement pstmt = con.prepareStatement(query);
+			ResultSet rs = pstmt.executeQuery(query);
+			
+			
+			while(rs.next()){
+				String day = rs.getString(1);
+				day = day.substring(0,4) + "년" + day.substring(4,6) + "월" + day.substring (6,8) + "일";
+				%>
+				<tr>
+					<td>
+					<%= day%>
+					</td>
+					<td><%= rs.getString(2)%></td>
+					<td><%= rs.getString(3)%></td>
+					<td><%=rs.getInt(4) %></td>
+					<td><%=rs.getInt(5) %></td>
+					<td><%=rs.getString(6) %></td>
+					<td>\<%=rs.getString(7) %></td>
+					
+				
+				</tr>
+				<%
+			}
+			
+		}catch(Exception e){
+			
+		}
+		
+		
+		%>
+		
+	
+	</table>
+</form>
+<jsp:include page="footer.jsp"></jsp:include>
+
+</body>
+</html>
