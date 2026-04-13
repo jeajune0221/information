@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="db_connect.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+request.setCharacterEncoding("UTF-8");
+
+String drv_date = request.getParameter("drv_date");
+String car_no = request.getParameter("car_no");
+String drv_start = request.getParameter("drv_start");
+String drv_end = request.getParameter("drv_end");
+String dept = request.getParameter("dept");
+String drv_money = request.getParameter("drv_money");
+out.print("입력된 부서: " + dept);
+
+
+String query = String.format(
+    "insert into tbl_drive values('%s','%s', %d, %d, '%s', %d)",
+    drv_date, car_no,
+    Integer.parseInt(drv_start),
+    Integer.parseInt(drv_end),
+    dept,
+    Integer.parseInt(drv_money)
+);
+
+PreparedStatement pstmt = con.prepareStatement(query);
+pstmt.executeUpdate(query);
+%>
+<jsp:forward page="list.jsp"></jsp:forward>
+</body>
+</html>

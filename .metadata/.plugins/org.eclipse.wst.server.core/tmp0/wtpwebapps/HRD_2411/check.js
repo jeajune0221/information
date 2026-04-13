@@ -30,8 +30,8 @@ function checkJoin() {
 		return false;
 	}
     
-    //if(frm.dept.value=="") {
-    if(frm.dept[1].checked == false && frm.dept[2].checked == false && frm.dept[3].checked == false && frm.dept[4].checked == false){
+    if(!frm.dept.value) {
+    //if(frm.dept[1].checked == false && frm.dept[2].checked == false && frm.dept[3].checked == false && frm.dept[4].checked == false){
 		alert('부서코드가 선택되지 않았습니다! ')
 		frm.dept[0].focus()
 		return false;

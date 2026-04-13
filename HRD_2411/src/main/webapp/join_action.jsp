@@ -19,6 +19,9 @@ String drv_end = request.getParameter("drv_end");
 String dept = request.getParameter("dept");
 String drv_money = request.getParameter("drv_money");
 
+System.out.print("입력된 부서: " + dept);
+
+
 String query = String.format(
     "insert into tbl_drive values('%s','%s', %d, %d, '%s', %d)",
     drv_date, car_no,

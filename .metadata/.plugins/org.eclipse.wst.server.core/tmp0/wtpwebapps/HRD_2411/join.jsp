@@ -58,10 +58,10 @@ try{
 <td colspan = 2>
 <select name ="dept" style ="width : 100%">
 <option value ="" selected>부서</option>
-<option value ="영업부">[10]영업부</option>
-<option value ="총무부">[20]총무부</option>
-<option value ="구매부">[30]구매부</option>
-<option value ="개발부">[40]개발부</option>
+<option value ="10">[10]영업부</option>
+<option value ="20">[20]총무부</option>
+<option value ="30">[30]구매부</option>
+<option value ="40">[40]개발부</option>
 
 </select>
 </td>
